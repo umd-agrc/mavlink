@@ -80,7 +80,7 @@ def inject_top_level_docs(input_html,filename):
         insert_text+='\n\n*This is a human-readable form of the XML definition file: [common.xml](https://github.com/mavlink/mavlink/blob/master/message_definitions/v1.0/common.xml).*'
     elif filename == 'ardupilotmega.xml':
         insert_text+='\n# MAVLINK ArduPilotMega Message Set'
-        insert_text+='\n\nThese messages define the APM specific message set, which is custom to [http://ardupilot.org](http://ardupilot.org).'
+        insert_text+='\n\nThese messages define the ArduPilot specific message set, which is custom to [http://ardupilot.org](http://ardupilot.org).'
         insert_text+='\n\n*This is a human-readable form of the XML definition file: [ardupilotmega.xml](https://github.com/mavlink/mavlink/blob/master/message_definitions/v1.0/ardupilotmega.xml).*'
         insert_text+='\n\n> **Warning** The ArduPilot MAVLink fork of [ardupilotmega.xml](https://github.com/ArduPilot/mavlink/blob/master/message_definitions/v1.0/ardupilotmega.xml) may contain messages that have not yet been merged into this documentation.'
     else:
@@ -90,7 +90,11 @@ def inject_top_level_docs(input_html,filename):
 
     insert_text+='\n\n<span></span>\n> **Note** MAVLink 2 messages have an ID > 255 and are marked up using **(MAVLink 2)** in their description.'
     insert_text+='\n\n<span id="mav2_extension_field"></span>\n> **Note** MAVLink 2 extension fields that have been added to MAVLink 1 messages are displayed in blue.'
+    style_text='\n\n<style>\ntd {\n    vertical-align:top;\n}\n</style>'
+    insert_text+=style_text
     input_html=insert_text+'\n\n'+input_html
+    
+    
     #print(input_html)
     return input_html
     
