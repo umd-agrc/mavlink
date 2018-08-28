@@ -4707,7 +4707,7 @@
       <field type="uint8_t[5]" name="point_valid">States if respective point is valid (boolean)</field>
     </message>
     <message id="340" name="PWM_OUTPUT_STATUS">
-      <description>The RAW values of the PWM outputs. The standard PPM modulation is as follows: 1000 microseconds: 0%, 2000 microseconds: 100%.</description>
+      <description>The RAW values of the PWM outputs. Zero values indicate unused channels. The standard PPM modulation is as follows: 1000 microseconds: 0%, 2000 microseconds: 100%.</description>
       <field type="uint64_t" name="time_usec" units="us">Timestamp (since system boot).</field>
       <field type="uint16_t" name="pwm1" units="us">Servo / motor output 1 value.</field>
       <field type="uint16_t" name="pwm2" units="us">Servo / motor output 2 value.</field>
